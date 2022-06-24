@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AppStyled = styled.main`
   width: 100%;
+  padding: 0 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,5 +34,16 @@ export const AppStyled = styled.main`
     color: rgb(255, 255, 255);
     font-size: 2rem;
     margin: 0px;
+  }
+
+  .next-question {
+    cursor: pointer;
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 204, 145));
+    border: 2px solid rgb(211, 133, 88);
+    box-shadow: rgb(0 0 0 / 25%) 0px 5px 10px;
+    border-radius: 10px;
+    height: 40px;
+    margin: 20px 0px;
+    padding: 0px 40px;
   }
 `;

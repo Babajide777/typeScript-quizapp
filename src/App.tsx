@@ -1,4 +1,6 @@
+import { async } from "q";
 import React, { useEffect, useState } from "react";
+import { getQuestions } from "./API";
 import QuestionCard from "./components/QuestionCard";
 import { AppStyled } from "./styles/AppStyled";
 import { GlobalStyled } from "./styles/GlobalStyled";
@@ -8,10 +10,17 @@ function App() {
   const [currentScore, setCurrentScore] = useState<number>(0);
 
   useEffect(() => {
-    fetch("https://the-trivia-api.com/api/questions?limit=10")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    (async function anyNameFunction() {
+      setQuestions(await getQuestions());
+    })();
   }, []);
+
+  console.log(questions);
+
+  let num: number = 6;
+  let question: string = "who is jide?";
+  let answers: string[] = ["jide", "peter", "oyafemi", "boss"];
+  let correctAnswer: string = "peter";
 
   return (
     <AppStyled>
@@ -19,7 +28,14 @@ function App() {
       <h1>React Quiz</h1>
       <button className="start">Start</button>
       <p className="score">Score: {currentScore}</p>
-      <QuestionCard />
+      {/* {questions} */}
+      <QuestionCard
+        num={num}
+        question={question}
+        answers={answers}
+        correctAnswer={correctAnswer}
+      />
+      <button className="next-question">Next Question</button>
     </AppStyled>
   );
 }
