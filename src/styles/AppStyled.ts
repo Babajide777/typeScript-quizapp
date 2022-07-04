@@ -36,6 +36,12 @@ export const AppStyled = styled.main`
     margin: 0px;
   }
 
+  .loading {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin: 0px;
+  }
+
   .next-question {
     cursor: pointer;
     background: linear-gradient(rgb(255, 255, 255), rgb(255, 204, 145));

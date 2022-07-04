@@ -7,6 +7,7 @@ type IQuestionCard = {
   question: string;
   answers: string[];
   correctAnswer: string;
+  callback: Function;
 };
 
 const QuestionCardStyled = styled.div`
